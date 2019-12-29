@@ -39,7 +39,7 @@ services:
       - ../data/mysql:/var/lib/mysql
     environment:
       TZ: Asia/Shanghai
-      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_ROOT_PASSWORD: root
 
   mysql-init:
     image: mysql:5.7
@@ -52,7 +52,7 @@ services:
       - ../sysadmin/db:/sql/sysadmin
       - ./init-db.sh:/init-db.sh
     environment:
-      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_ROOT_PASSWORD: root
 
 networks:
   sc-net:

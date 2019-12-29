@@ -10,7 +10,7 @@ services:
       - ./moss/mysql:/sql
       - ./init-db.sh:/init-db.sh
     environment:
-      MYSQL_ROOT_PASSWORD: root123
+      MYSQL_ROOT_PASSWORD: root
 
   #Moss管理中心
   moss:

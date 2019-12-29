@@ -6,7 +6,16 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: ${REGISTER_HOST:localhost}:${REGISTER_PORT:8848}
+        # nacos-server注册服务地址
+        server-addr: ${NACOS_SERVER_ADDR:localhost:8848}
+        # nacos-server中配置的命名空间ID
+        namespace: ${NACOS_NAMESPACE:e162cde8-e156-4516-aada-9c8c28850341}
+        # 设置实例IP，docker部署时容器内部无法准确获取到宿主机IP
+        ip: ${INSTANCE_IP_ADDRESS:127.0.0.1}
       config:
-        server-addr: ${REGISTER_HOST:localhost}:${REGISTER_PORT:8848}
-        file-extension: yml
+        # nacos-server配置服务地址
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        # nacos-server中配置的命名空间ID
+        namespace: ${NACOS_NAMESPACE:e162cde8-e156-4516-aada-9c8c28850341}
+        # 默认配置文件类型
+        file-extension: ${NACOS_CONFIG_FILE_EXTENSION:yaml}

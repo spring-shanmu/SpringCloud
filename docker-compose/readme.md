@@ -7,7 +7,7 @@ mysql、redis、rabbitmq
 `docker-compose up -d`
 
 rabbitmq默认账号密码：guest/guest
-mysql默认账号密码：root/root123
+mysql默认账号密码：root/root
 
 ## 启动devops组件，如elasticsearch、zipkin、skywalking、kibana、grafana
 
